@@ -7,6 +7,7 @@ import {
 import './index.css'
 import App from './App';
 import Statistics from './Statistics/Statistics';
+import AppliedJobs from './Job Details/JobDetails';
 // import Jobtitle from './Jobtitle/Jobtitle';
 
 
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/AppliedJobs",
-    element: <h2>This Is AppliedJobs</h2>,
+    element: <div>This is Aplided under maintainens</div>
   },
   {
     path: "/Blog",

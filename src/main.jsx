@@ -6,12 +6,22 @@ import {
 } from "react-router-dom";
 import './index.css'
 import App from './App';
+// import Jobtitle from './Jobtitle/Jobtitle';
+import Home from './Home/Home';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    children:[
+      {
+        path:'/',
+        element:<Home></Home>,
+        loader: () => fetch('https://jsonplaceholder.typicode.com/users')
+      }
+    ]
+    
   },
 ]);
 

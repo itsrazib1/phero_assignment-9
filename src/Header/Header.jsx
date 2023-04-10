@@ -1,5 +1,6 @@
 import React from 'react';
 import "./Header.css"
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -16,9 +17,10 @@ const Header = () => {
         {/* <!-- Navigation items --> */}
         <div class="hidden sm:block sm:ml-6">
           <div class="flex px-64 ">
-            <a href="#" class="btnColor hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Statistics</a>
-            <a href="#" class="btnColor hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Applied Jobs</a>
-            <a href="#" class="btnColor hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</a>
+            <Link to='/' class="btnColor hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</Link>
+            <Link to='/Statistics' class="btnColor hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Statistics</Link>
+            <Link to='/AppliedJobs' class="btnColor hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Applied Jobs</Link>
+            <Link to='/Blog' class="btnColor hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
           </div>
         </div>
       </div>

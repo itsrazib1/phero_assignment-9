@@ -1,13 +1,20 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { Bar } from 'react-chartjs-2';
+
 import Header from '../Header/Header';
+import Sdata from './Sdata';
+
 
 const Statistics = () => {
     return (
         <>
-        <Header/>
-        <div>
+        
 
-            <h2>This Is Statistics</h2>
+        <Header/>
+        
+        <div>
+            <Sdata></Sdata>
+
         </div>
         </>
     );

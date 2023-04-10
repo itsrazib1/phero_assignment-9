@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 import "./F.css";
+import { Link } from "react-router-dom";
 
 const FeaturedJobs = () => {
   const [jobs, setJobs] = useState([]);
@@ -51,7 +52,8 @@ const FeaturedJobs = () => {
               {job.salary}
             </div>
             <button className="mb-10 btnx hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-              View Details
+            <Link to={`/jobs/${job._id}`}>View Details</Link>
+              
             </button>
           </div>
         ))}

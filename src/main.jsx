@@ -6,22 +6,27 @@ import {
 } from "react-router-dom";
 import './index.css'
 import App from './App';
+import Statistics from './Statistics/Statistics';
 // import Jobtitle from './Jobtitle/Jobtitle';
-import Home from './Home/Home';
+
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    children:[
-      {
-        path:'/',
-        element:<Home></Home>,
-        loader: () => fetch('https://jsonplaceholder.typicode.com/users')
-      }
-    ]
-    
+  },
+  {
+    path: "/Statistics",
+    element:  <Statistics/> ,
+  },
+  {
+    path: "/AppliedJobs",
+    element: <h2>This Is AppliedJobs</h2>,
+  },
+  {
+    path: "/Blog",
+    element: <h2>This Is Blog</h2>,
   },
 ]);
 

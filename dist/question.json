@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1a",
+    "question": "When should you use context API?",
+    "answer": "The Context API in React should be used when there is a need to share data betweens components that are not directly related in the component tree. It allows for a more efficient and scalable way of passing data without the need for prop drilling or creating a complex hierarchy of components."
+  },
+  {
+    "id": "2b",
+    "question": "What is a custom hook?",
+    "answer": "A custom hook in React is a reusable function that encapsulates a specific behavior or logic that can be shared between multiple components.It allows developers to extract common functionality and use it across different parts of their application, making code more modular and easier to maintain."
+  },
+  {
+    "id": "3c",
+    "question": "What is useRef?",
+    "answer": "useRef is a React hook that allows you to create a mutable object that persists across renders, without triggering a re-render when its value changes.It is commonly used to store references to DOM elements or other values that need to be preserved between renders."
+  },
+  {
+    "id": "4d",
+    "question": "What is useMemo?",
+    "answer": "useMemo is a React hook that allows you to memoize expensive computations so that they only re-run when their dependencies change.It helps to optimize the performance of your React applications by reducing unnecessary re-renders."
+  }
+]

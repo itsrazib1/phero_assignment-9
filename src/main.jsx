@@ -1,47 +1,62 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import "./index.css";
-import App from "./App";
-// import Statistics from "./Statistics/Statistics";
-import AppliedJobs from "./Applied Jobs/AppliedJobs";
-// import JobDetails from "./Job Details/JobDetails";
-import Example from "./Statistics/Sdata";
-import ErrorPage from "./error-page";
-import JobDetails from "./Job Details/JobDetails";
-import Featured from "../public/Featured.json";
-import Blogs from "./Blogs/Blogs";
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App'
+import './index.css'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import Main from './components/Layout/Main';
+import Error from './components/Error/Error';
+import Home from './components/Home/Home';
+import Statistics from './components/Statistics/Statistics';
+import AppliedJobs from './components/AppliedJobs/AppliedJobs';
+import Blogs from './components/Blogs/Blogs';
+import { jobDetailsLoader, jobsLoader } from './components/Utilities/Loader';
+import JobDetails from './components/JobDetails/JobDetails';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
+    path: '/',
+    element: <Main></Main>,
+    errorElement: <Error></Error>,
     children: [
-     
-    ],
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "jobs/:dataID",
-    element: <JobDetails key={Featured._id}></JobDetails>,
-    loader:({params})=>fetch(`Featured.json/${params.dataID}`),
-  },
-  {
-    path: "/Statistics",
-    element: <Example />,
-  },
-  {
-    path: "/AppliedJobs",
-    element: <AppliedJobs />,
-  },
-  {
-    path: "/Blog",
-    element: <Blogs></Blogs>,
-  },
-]);
+      {
+        path: '/',
+        element: <Home></Home>,
+        loader: jobsLoader
+      },
+      {
+        path: 'statistics',
+        element: <Statistics></Statistics>,
+        loader: () => fetch('/assignment.json')
+      },
+      {
+        path: 'applied',
+        element: <AppliedJobs></AppliedJobs>,
+        loader: jobsLoader
+      },
+      {
+        path: 'blogs',
+        element: <Blogs></Blogs>,
+        loader: () => fetch('/question.json')
+      },
+      {
+        path: 'job-details/:id',
+        element: <JobDetails applied={false}></JobDetails>,
+        loader: ({params}) => jobDetailsLoader(params.id)
+      },
+      {
+        path: 'applied/job-details/:jobId',
+        element: <JobDetails applied={true}></JobDetails>,
+        loader: ({params}) => jobDetailsLoader(params.jobId)
+      },
+    ]
+  }
+])
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={router}></RouterProvider>
-  </React.StrictMode>
-);
+  </React.StrictMode>,
+)

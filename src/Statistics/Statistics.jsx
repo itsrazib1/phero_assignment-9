@@ -3,6 +3,7 @@ import { Bar } from 'react-chartjs-2';
 
 import Header from '../Header/Header';
 import Sdata from './Sdata';
+import Footer from '../Footer/Footer';
 
 
 const Statistics = () => {
@@ -16,6 +17,7 @@ const Statistics = () => {
             <Sdata></Sdata>
 
         </div>
+        
         </>
     );
 };

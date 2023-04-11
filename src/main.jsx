@@ -9,7 +9,8 @@ import AppliedJobs from "./Applied Jobs/AppliedJobs";
 import Example from "./Statistics/Sdata";
 import ErrorPage from "./error-page";
 import JobDetails from "./Job Details/JobDetails";
-// import ErrorPage from "./error-page";
+import Featured from "../public/Featured.json";
+import Blogs from "./Blogs/Blogs";
 
 const router = createBrowserRouter([
   {
@@ -22,9 +23,8 @@ const router = createBrowserRouter([
   },
   {
     path: "jobs/:dataID",
-    element: <JobDetails></JobDetails>,
-    // loader: () => fetch("Featured.json"),
-    loader:({params})=>fetch(`Featured.json${params.dataID}`),
+    element: <JobDetails key={Featured._id}></JobDetails>,
+    loader:({params})=>fetch(`Featured.json/${params.dataID}`),
   },
   {
     path: "/Statistics",
@@ -36,7 +36,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Blog",
-    element: <h2>This Is Blog</h2>,
+    element: <Blogs></Blogs>,
   },
 ]);
 

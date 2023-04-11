@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import Jobtitle from "../Jobtitle/Jobtitle";
 import FeaturedJobs from "../FeaturedJobs/FeaturedJobs";
+import Footer from "../Footer/Footer";
 
 
 const Home = () => {
@@ -11,10 +12,10 @@ const Home = () => {
   return (
     <>
       <div>
-        <div class="flex justify-between  items-center mx-48 mt-10">
-          <div class="w-3/5">
-            <h2 class="text-7xl font-bold mb-4 ">
-              One Step <br /> <span className="text-6xl ">Closer To Your</span>
+        <div class="flex justify-between   items-center mx-48 mt-10">
+          <div class="w-1/2">
+            <h2 class="text-7xl font-bold mb-6">
+              One Step <br /> <span className="text-7xl mt-4">Closer To Your</span>
               <br />
               <span className="TextX">Dream Job</span>
             </h2>
@@ -28,13 +29,14 @@ const Home = () => {
               Get Started
             </button>
           </div>
-          <div class=" ms-96 w-2/5">
+          <div class="  w-1/2">
             <img src="./img2.png" alt="Image" class="rounded imgX" />
           </div>
         </div>
       </div>
       <Jobtitle/>
       <FeaturedJobs/>
+      <Footer></Footer>
     </>
   );
 };

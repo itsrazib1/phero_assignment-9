@@ -1,6 +1,7 @@
 import React from 'react';
 import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -91,6 +92,7 @@ export default function App() {
     </BarChart>
 
     </div>
+    <Footer></Footer>
     </>
     
   );

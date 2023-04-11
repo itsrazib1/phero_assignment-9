@@ -9,8 +9,13 @@ import {
   faMailBulk,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { useLoaderData } from "react-router-dom";
+import Footer from "../Footer/Footer";
 
 const JobDetails = () => {
+  const Data = useLoaderData();
+
+  console.log(Data);
   return (
     <div>
       <div className=" bg-slate-100 -mt-10 pt-10 pb-5">
@@ -101,6 +106,7 @@ const JobDetails = () => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 };

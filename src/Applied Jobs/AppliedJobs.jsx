@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Header from "../Header/Header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
+import Footer from "../Footer/Footer";
 const AppliedJobs = () => {
   const [showItems, setShowItems] = useState(false);
   return (
@@ -62,6 +63,7 @@ const AppliedJobs = () => {
 </button>
 
       </div>
+      <Footer/>
     </div>
   );
 };

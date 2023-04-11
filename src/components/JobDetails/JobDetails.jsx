@@ -17,12 +17,12 @@ const JobDetails = ({applied}) => {
     let toastShown = false;
     for (const id in appliedListsDb) {
       if (id === job.id && (!toastShown)) {
-        toast('You have already applied 🔥');
+        toast('You have already applied');
         toastShown = true;
       }
     }
     if (!toastShown) {
-      toast('Congratulations! Application done 🆗')
+      toast('Congratulations! Application done')
       toastShown = false;
     }
   }
